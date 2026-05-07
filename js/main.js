@@ -7,7 +7,7 @@ const formulario = document.querySelector("#formulario");
 // TODO: CAPTURAR LOS ELEMENTOS DEL DOM
 
 
-const producto2 = [];//se rellena con lo que recojamos del localstorage si  no hay nada el local devuelve false 
+
 
 /*
 
@@ -51,7 +51,7 @@ formulario.addEventListener("submit", (ev) => {
     getDataForm(producto)
 
 })
-
+ 
 // click en eliminar
 // capturar el id del producto 
 // comprobar si cantidad sea uno -> elimino el producto 
@@ -77,7 +77,7 @@ const getLocalData = () => {
     //          //retirna dataos
     const productos = localStorage.getItem("item")
     //si existe el item o objeto en el local storage sera un string si no devuelve null
-    return productos ? JSON.parse(productos): []
+    return productos ? JSON.parse(productos) : []
 }
 
 
@@ -94,12 +94,12 @@ const setStorage = (producto) => {
 
 const almacenarProductos = (producto) => {
     const arrayProductos = getLocalData()
-    
-     // comprueba si el producto ya exise
+
+    // comprueba si el producto ya exise
     const existeProducto = arrayProductos.find(
         item => item.nombre === producto
     )
-// //-> si si existe incrementa en uno la cantidad 
+    // //-> si si existe incrementa en uno la cantidad 
     if (existeProducto) {
         existeProducto.cantidad++
     }
@@ -115,21 +115,21 @@ const almacenarProductos = (producto) => {
             id: Date.now(),
             nombre: producto,
             cantidad: 1
-        } 
+        }
         arrayProductos.push(nuevoProducto)
 
     }
 
     // // -> se añade al array existente (en el localstorage)
-// const array=[
-//     los objetos que ya existen
-//     añadir el nuevo
-// ]
+    // const array=[
+    //     los objetos que ya existen
+    //     añadir el nuevo
+    // ]
 
-    
-// // -> volve a añadir al local el array nuevo
+
+    // // -> volve a añadir al local el array nuevo
     setStorage(arrayProductos)
-   console.log(arrayProductos)
+    console.log(arrayProductos)
 }
 
 
