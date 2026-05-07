@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <form action=""id = "formulario">
-    <label for="name">Nombre del producto:</label>
-    <input type="text" name="name" id="name">
-    <input type="submit" value="enviar" id="anadirProducto">
+    <header>
+        <h1>Carrito de productos</h1>
+    </header>
+    <section>
+   <form action="" id="formulario">
+        <label for="producto">Nombre del producto:</label>
+        <input type="text" name="producto" id="producto" required>
+        <input type="submit" value="AgregarProducto" id="agregarProducto">
    </form>
+   <table>
+    <thead>
+        <th>
+            <td>ID</td>
+            <td>Producto</td>
+            <td>cantidad</td>
+            <td>&nbsp;</td>
+        </th>
+    </thead>
+    <tbody id="tabla"></tbody>
+   </table>
+</section>
+<footer>
+    <p>&copy; 2023 Carrito de productos. Todos los derechos reservados.</p>
+</footer>
+<script src="js/main.js"></script>
 </body>
 </html>
